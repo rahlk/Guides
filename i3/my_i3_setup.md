@@ -1,8 +1,14 @@
-# Packages to install
- - `xbacklight`: Installs backlight control on laptops
- -
+# How to _"rice"_ i3
 
-## Turn on fn-keys
+## Packages to install
+ - `xbacklight`: Installs backlight control on laptops
+ - `arandr`: For controlling display parameters
+ - `feh`: For setting wallpaper
+
+## Configurations
+
+
+### 1. Turn on fn-keys
 ```
 # Pulse Audio controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
@@ -23,10 +29,10 @@ bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 ```
 
-## Wallpapers
+### Wallpapers
 `exec_always --no-startup-id feh --bg-scale absolute/path/to/wallpapers`
 
-## Assign Workspaces
+### Assign Workspaces
 ```
 set $workspace1 "1. Terminals"
 set $workspace2 "2. Browser"
@@ -63,3 +69,16 @@ bindsym $mod+Shift+8 move container to workspace $workspace8
 bindsym $mod+Shift+9 move container to workspace $workspace9
 bindsym $mod+Shift+0 move container to workspace $workspace0
 ```
+### 4. Binding applications to workspaces
+
+- Open up a terminal beside your application. Then run `xprop`. Then click on
+  the application. This will dump some text on the console like so
+  ```
+  ...
+  WM_CLASS(STRING) = "spotify", "Spotify"
+                                 ````````
+                                    ^
+                                    |__  Copy this string
+  ...
+  ``` 
+
