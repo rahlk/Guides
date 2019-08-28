@@ -82,8 +82,8 @@ bindsym $mod+Shift+0 move container to workspace $workspace0
   - Open up a terminal beside your application. Then run `xprop | grep CLASS`. Then click on the application. This will dump some text on the console like below. Copy the second string:
     ```
     WM_CLASS(STRING) = "mendeleydesktop", "Mendeley Desktop"
-                                                  ↖ 
-                                                   Copy this string
+                                                    ↖ 
+                                                     Copy this string
     ``` 
 - The add the following lines to the i3 config:
   ```
