@@ -82,14 +82,13 @@ bindsym $mod+Shift+0 move container to workspace $workspace0
   the application. This will dump some text on the console like below. Copy
 the second string:
   ```
-  WM_CLASS(STRING) = "spotify", "Spotify"
-                                        ↖ 
-                                  Copy this string
+  WM_CLASS(STRING) = "mendeleydesktop", "Mendeley Desktop"
+                                                  ↖ 
+                                                   Copy this string
   ``` 
 - The add the following lines to the i3 config:
   ```
-  assign [class="Mendeley Desktop"] $workspace<X> # <-- <X> is the workspace number to
-force spotify to open on.
+  assign [class="Mendeley Desktop"] $workspace<X> # <-- <X> is the workspace number to force spotify to open on.
   ```
 - In some cases, e.g., spotify, this may not work. Here's the work around:
   ```
