@@ -39,16 +39,16 @@ bindsym XF86AudioPrev  exec playerctl --player=spotify previous
 
 ### Assign Workspaces
 ```
-set $workspace1 "1. Terminals"
-set $workspace2 "2. Browser"
-set $workspace3 "3. Coding"
-set $workspace4 "4. Email"
-set $workspace5 "5. Slack"
-set $workspace6 "6. Mendeley"
-set $workspace7 "7. Spotify"
-set $workspace8 "8. Mics. 1"
-set $workspace9 "9. Misc. 2"
-set $workspace0 "10. Misc. 3"
+set $workspace1 "1. "
+set $workspace2 "2. "
+set $workspace3 "3. "
+set $workspace4 "4. "
+set $workspace5 "5. "
+set $workspace6 "6. "
+set $workspace7 "7. "
+set $workspace8 "8.  1"
+set $workspace9 "9.  2"
+set $workspace0 "10.  3"
 
 # switch to workspace
 bindsym $mod+1 workspace $workspace1
@@ -76,17 +76,37 @@ bindsym $mod+Shift+0 move container to workspace $workspace0
 ```
 ### 4. Binding applications to workspaces
 
-- Open up a terminal beside your application. Then run `xprop`. Then click on
-  the application. This will dump some text on the console like so
+- Open up a terminal beside your application. Then run `xprop | grep CLASS`. Then click on
+  the application. This will dump some text on the console like below. Copy
+the second string:
   ```
-  ...
   WM_CLASS(STRING) = "spotify", "Spotify"
                                         ↖ 
                                   Copy this string
-  ...
   ``` 
 - The add the following lines to the i3 config:
   ```
-  assign [class="Spotify"] $workspace(X) # <-- (x) is the workspace number to
+  assign [class="Mendeley Desktop"] $workspace<X> # <-- <X> is the workspace number to
 force spotify to open on.
   ```
+- In some cases, e.g., spotify, this may not work. Here's the work around:
+  ```
+  for_window [class="Spotify"] mo/=ve to workspace $workspace<X>
+  ```
+
+### 5. Fancy fonts
+
+We'll use [Font Awesome](https://fontawesome.com/). 
+  - Go to the github repository at:
+    https://github.com/FontAwesome/Font-Awesome and clone it.
+  - `cd` into the directory, and then go the the `webfonts` subdirectory. 
+  - Copy all the `*.ttf` files into `~/.fonts/` (if it doesn't exist, create
+    it.)
+  - That's pretty much it. Now, rename the workspaces with the icons. You can
+    find them here: https://fontawesome.com/cheatsheet
+
+### 6. Force applications to open in the corresponding workspace.
+  - It's always useful to open apps in their assigned workspace (except for
+    terminal, of course).
+  - We use the `assign [class=<class_string>] $workspace<Y>` command in the i3
+    config file to achieve this.  
