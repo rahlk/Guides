@@ -9,6 +9,12 @@
 
 
 ### 1. Turn on fn-keys
+
+First we wanna install `playerctl`. This is best installed from source. 
+Download and install the latest version from [](https://github.com/altdesktop/playerctl/releases/).
+
+Then, add the following to i3 config:
+
 ```
 # Pulse Audio controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
@@ -23,10 +29,10 @@ bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightne
 bindsym XF86TouchpadToggle exec /some/path/toggletouchpad.sh # toggle touchpad
 
 # Media player controls
-bindsym XF86AudioPlay exec playerctl play
-bindsym XF86AudioPause exec playerctl pause
-bindsym XF86AudioNext exec playerctl next
-bindsym XF86AudioPrev exec playerctl previous
+bindsym XF86AudioPlay  exec playerctl --player=spotify play-pause
+bindsym XF86AudioPause exec playerctl --player=spotify play-pause
+bindsym XF86AudioNext  exec playerctl --player=spotify next
+bindsym XF86AudioPrev  exec playerctl --player=spotify previous
 ```
 
 ### Wallpapers
