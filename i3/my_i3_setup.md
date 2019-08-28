@@ -76,9 +76,8 @@ bindsym $mod+Shift+0 move container to workspace $workspace0
   ```
   ...
   WM_CLASS(STRING) = "spotify", "Spotify"
-                                 ````````
-                                    ^
-                                    |__  Copy this string
+                                        ↖ 
+                                  Copy this string
   ...
   ``` 
 
