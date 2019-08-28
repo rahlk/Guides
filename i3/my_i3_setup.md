@@ -80,11 +80,11 @@ bindsym $mod+Shift+0 move container to workspace $workspace0
   - It's always useful to open apps in their assigned workspace (except for
     terminal, of course).
   - Open up a terminal beside your application. Then run `xprop | grep CLASS`. Then click on the application. This will dump some text on the console like below. Copy the second string:
-  ```
-  WM_CLASS(STRING) = "mendeleydesktop", "Mendeley Desktop"
+    ```
+    WM_CLASS(STRING) = "mendeleydesktop", "Mendeley Desktop"
                                                   ↖ 
                                                    Copy this string
-  ``` 
+    ``` 
 - The add the following lines to the i3 config:
   ```
   assign [class="Mendeley Desktop"] $workspace<X> # <-- <X> is the workspace number to force spotify to open on.
