@@ -14,7 +14,6 @@ First we wanna install `playerctl`. This is best installed from source.
 Download and install the latest version from [](https://github.com/altdesktop/playerctl/releases/).
 
 Then, add the following to i3 config:
-
 ```
 # Pulse Audio controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
@@ -86,4 +85,8 @@ bindsym $mod+Shift+0 move container to workspace $workspace0
                                   Copy this string
   ...
   ``` 
-
+- The add the following lines to the i3 config:
+  ```
+  assign [class="Spotify"] $workspace(X) # <-- (x) is the workspace number to
+force spotify to open on.
+  ```
