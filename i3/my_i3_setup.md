@@ -13,7 +13,7 @@
 ### 1. Turn on fn-keys
 
 First we wanna install `playerctl`. This is best installed from source. 
-Download and install the latest version from [](https://github.com/altdesktop/playerctl/releases/).
+Download and install the latest version from https://github.com/altdesktop/playerctl/releases/.
 
 Then, add the following to i3 config:
 ```
