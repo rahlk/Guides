@@ -77,10 +77,9 @@ bindsym $mod+Shift+9 move container to workspace $workspace9
 bindsym $mod+Shift+0 move container to workspace $workspace0
 ```
 ### 4. Binding applications to workspaces
-
-- Open up a terminal beside your application. Then run `xprop | grep CLASS`. Then click on
-  the application. This will dump some text on the console like below. Copy
-the second string:
+  - It's always useful to open apps in their assigned workspace (except for
+    terminal, of course).
+  - Open up a terminal beside your application. Then run `xprop | grep CLASS`. Then click on the application. This will dump some text on the console like below. Copy the second string:
   ```
   WM_CLASS(STRING) = "mendeleydesktop", "Mendeley Desktop"
                                                   ↖ 
@@ -93,8 +92,17 @@ the second string:
 - In some cases, e.g., spotify, this may not work. Here's the work around:
   ```
   for_window [class="Spotify"] mo/=ve to workspace $workspace<X>
+  ``` 
+- In my case, I have:
   ```
-
+  assign [class="Google-chrome"] $workspace2
+  assign [class="Code"] $workspace3
+  assign [class="Mailspring"] $workspace4
+  assign [class="Slack"] $workspace5
+  assign [class="Mendeley Desktop"] $workspace6
+  for_window [class="Spotify"] move to workspace $workspace7
+  ```
+    
 ### 5. Fancy fonts
 
 We'll use [Font Awesome](https://fontawesome.com/). 
@@ -104,23 +112,7 @@ We'll use [Font Awesome](https://fontawesome.com/).
   - Copy all the `*.ttf` files into `~/.fonts/` (if it doesn't exist, create
     it.)
   - That's pretty much it. Now, rename the workspaces with the icons. You can
-    find them here: https://fontawesome.com/cheatsheet
-
-### 6. Force applications to open in the corresponding workspace.
-  - It's always useful to open apps in their assigned workspace (except for
-    terminal, of course).
-  - We use the `assign [class=<class_string>] $workspace<Y>` command in the i3
-    config file to achieve this. 
-    + To get `class_string` run `xprop|grep CLASS` and click on the window
-      (discussed in §4 above). `Y` will be your preferred workspace number.
-  - In my case, I have:
-    ```
-    assign [class="Google-chrome"] $workspace2
-    assign [class="Code"] $workspace3
-    assign [class="Mailspring"] $workspace4
-    assign [class="Slack"] $workspace5
-    assign [class="Mendeley Desktop"] $workspace6
-    ```
+    find them here: https://fontawesome.com/cheatsheet  
 
 # 
 
