@@ -1,9 +1,11 @@
 # How to _"rice"_ i3
 
 ## Packages to install
- - `xbacklight`: Installs backlight control on laptops
- - `arandr`: For controlling display parameters
- - `feh`: For setting wallpaper
+ - `xbacklight`: Installs backlight control on laptops.
+ - `arandr`: For controlling display parameters.
+ - `feh`: For setting wallpaper.
+ - `rofi`: dmenu alternative.
+ - `lxappreance`: For setting custom gtk themes.
 
 ## Configurations
 
@@ -109,4 +111,17 @@ We'll use [Font Awesome](https://fontawesome.com/).
   - It's always useful to open apps in their assigned workspace (except for
     terminal, of course).
   - We use the `assign [class=<class_string>] $workspace<Y>` command in the i3
-    config file to achieve this.  
+    config file to achieve this. 
+    + To get `class_string` run `xprop|grep CLASS` and click on the window
+      (discussed in §4 above). `Y` will be your preferred workspace number.
+  - In my case, I have:
+    ```
+    assign [class="Google-chrome"] $workspace2
+    assign [class="Code"] $workspace3
+    assign [class="Mailspring"] $workspace4
+    assign [class="Slack"] $workspace5
+    assign [class="Mendeley Desktop"] $workspace6
+    ```
+
+# 
+
