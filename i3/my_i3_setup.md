@@ -91,7 +91,7 @@ bindsym $mod+Shift+0 move container to workspace $workspace0
   ```
 - In some cases, e.g., spotify, this may not work. Here's the work around:
   ```
-  for_window [class="Spotify"] mo/=ve to workspace $workspace<X>
+  for_window [class="Spotify"] move to workspace $workspace<X>
   ``` 
 - In my case, I have:
   ```
